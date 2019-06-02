@@ -45,7 +45,7 @@ class Numberdrome {
     } else {
       return this.list.reduce((a, b) => {
         return Math.min(a, b);
-      }, 0);
+      });
     }
   }
 
@@ -55,7 +55,7 @@ class Numberdrome {
     } else {
       return this.list.reduce((a, b) => {
         return Math.max(a, b);
-      }, 0);
+      });
     }
   }
 }
