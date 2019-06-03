@@ -24,7 +24,7 @@ class Numberdrome {
     }, 1);
   }
   
-  funcForMaxAndMin(maxOrMin) {
+  _funcForMaxAndMin(maxOrMin) {
     try {
       if (!this.listOfNumbers.length) {
         throw new Error("List of number doesn't have numbers");
@@ -38,11 +38,11 @@ class Numberdrome {
   }
 
   min() {
-    return this.funcForMaxAndMin();
+    return this._funcForMaxAndMin();
   }
 
   max() {
-    return this.funcForMaxAndMin('max');
+    return this._funcForMaxAndMin('max');
   }
 
 }
