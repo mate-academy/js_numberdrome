@@ -27,19 +27,3 @@ class Numberdrome {
     return Math.max(...this.num);
   }
 }
-
-const a = new Numberdrome();
-a.addNumber(1);
-a.addNumber(2);
-a.addNumber(3);
-a.addNumber(4);
-a.addNumber(5);
-console.log(a);
-a.removeNumber(3);
-console.log(a);
-
-console.log('sum ' + a.sum());
-
-console.log('product ' + a.product());
-console.log('max ' + a.max());
-console.log('min ' + a.min());
