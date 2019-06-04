@@ -26,14 +26,13 @@ class Numberdrome {
   }
   
   _funcForMaxAndMin(maxOrMin) {
-    
       if (!this.listOfNumbers.length) {
         throw new Error("List of number doesn't have numbers");
       } else {
-        return maxOrMin === 'max' ? Math.max(...this.listOfNumbers) :
-                                    Math.min(...this.listOfNumbers);
+          return maxOrMin === 'max'
+            ? Math.max(...this.listOfNumbers)
+            : Math.min(...this.listOfNumbers);
       }
-
   }
 
   min() {
