@@ -20,15 +20,15 @@ class Numberdrome {
   }
 
   sum() {
-    this.listOfNumbers.reduce(function(sum, curr) {
-      return sum+curr;
-    }, 0)
+     return this.listOfNumbers.reduce((sum, curr) => {
+      return sum + curr;
+    })
   }
 
   product() {
-    this.listOfNumbers.reduce(function(product, curr) {
+    return this.listOfNumbers.reduce((product, curr) => {
       return product*curr;
-    }, 0)
+    })
   }
 
   min() {
