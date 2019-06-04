@@ -5,8 +5,8 @@ function findExtremumInList(list, findHighest) {
     return list.reduce(
       (extremum, number) => ((findHighest ? 1: -1) * (number - extremum) < 0)
         ? number
-        : extremum
-      , list[0]
+        : extremum,
+      list[0]
     );
   }
 }
