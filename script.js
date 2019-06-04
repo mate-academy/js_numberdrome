@@ -2,42 +2,50 @@
 
 class Numberdrome {
   constructor(numbersArray) {
-    this.numbers = ...numbersArray || [];
+    this.numbers = numbersArray ? numbersArray : [];
   }
+
   addNumber(num) {
     this.numbers.push(num);
-    console.log(this.numbers);
+    return this.numbers;
   }
+
   removeNumber(num) {
     this.numbers = this.numbers.filter(number => number !== num);
-    console.log(this.numbers);
+    return this.numbers;
   }
+
   sum() {
     const sumOfNumbers = this.numbers.reduce((acc, num) => {
       acc += num;
       return acc;
     }, 0);
-    return console.log(sumOfNumbers);;
+    return sumOfNumbers;
   }
+
   product() {
-    const result = this.numbers.length === 0 ?
-          1 : 
-          this.numbers.reduce((acc, num) => {
-            acc *= num;
-            return acc;
-          }, 1);
-    console.log(result);
+    const result = this.numbers.reduce((acc, num) => {
+      acc *= num;
+      return acc;
+    }, 1);
+    return result;
   }
+
   min() {
     this._validate();
     const result = Math.min(...this.numbers);
-    console.log(result);
+    return result;
   }
+
   max() {
     this._validate();
     const result = Math.max(...this.numbers);
-    console.log(result);
+    return result;
   }
-  _validate(){
-    if (this.numbers.length === 0) throw new Error("empty array!");
+
+  _validate() {
+    if (this.numbers.length === 0) {
+      throw new Error("empty array!");
+    }
+  }
 }
