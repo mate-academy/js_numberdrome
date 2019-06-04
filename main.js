@@ -18,12 +18,10 @@ class Numberdrome {
     this.num.splice(index, 1);
   }
   sum(){
-    if(this.num.length !== 0) {
-      return this.num.reduce(((a, b) => a + b),0);
-    }
+    return this.num.reduce(((a, b) => a + b), 0);
   }
   product() {
-    return this.num.reduce(((a, b) => a * b),1);
+    return this.num.reduce(((a, b) => a * b), 1);
   }
   min(){
     return Math.min(...this.num);
