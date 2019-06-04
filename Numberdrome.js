@@ -28,6 +28,9 @@ class Numberdrome {
     return result;
   };
   min() {
+    if (this.numbers.length === 0) {
+      throw new Error('no args');
+    }
     let minValue = this.numbers[0];
     this.numbers.forEach((item) =>{
       if (minValue > item) {
@@ -37,6 +40,9 @@ class Numberdrome {
     return minValue;
   }
   max() {
+    if (this.numbers.length === 0) {
+      throw new Error('no args');
+    }
     let maxValue = this.numbers[0];
     this.numbers.forEach((item) =>{
       if (maxValue < item) {
