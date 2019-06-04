@@ -39,3 +39,4 @@ class Numberdrome {
       return Math.max(...this.numbers);
   }
 }
+

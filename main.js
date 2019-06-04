@@ -12,3 +12,4 @@ console.log(numbers.sum());
     numbers.removeNumber(3);
     console.log(numbers.numbers)
 });
+
