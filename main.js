@@ -1,3 +1,5 @@
+'use strict';
+
 class Numberdrome {
   constructor() {
     this.num = [];
@@ -12,7 +14,7 @@ class Numberdrome {
   }
 
   sum() {
-    return this.num.reduce(((a, b) => a + b),0)
+    return this.num.reduce(((a, b) => a + b), 0)
   }
 
   product() {
@@ -20,10 +22,17 @@ class Numberdrome {
   }
 
   min() {
+    if (this.num.length === 0) {
+      throw new Error('no numbers');
+    }
     return Math.min(...this.num);
   }
 
   max() {
+    if (this.num.length === 0) {
+      throw new Error('no numbers');
+    }
     return Math.max(...this.num);
   }
 }
+
