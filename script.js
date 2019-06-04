@@ -1,8 +1,8 @@
 'use strict';
 
 class Numberdrome {
-  constructor() {
-    this.numbers = [];
+  constructor(numbersArray) {
+    this.numbers = ...numbersArray || [];
   }
   addNumber(num) {
     this.numbers.push(num);
@@ -20,18 +20,24 @@ class Numberdrome {
     return console.log(sumOfNumbers);;
   }
   product() {
-    const result = this.numbers.length === 0 ? 1 : this.numbers.join('');
+    const result = this.numbers.length === 0 ?
+          1 : 
+          this.numbers.reduce((acc, num) => {
+            acc *= num;
+            return acc;
+          }, 1);
     console.log(result);
   }
   min() {
-    if (this.numbers.length === 0) throw new Error("empty array!");
+    this._validate();
     const result = Math.min(...this.numbers);
     console.log(result);
   }
   max() {
-    if (this.numbers.length === 0) throw new Error("empty array!");
+    this._validate();
     const result = Math.max(...this.numbers);
     console.log(result);
   }
-
+  _validate(){
+    if (this.numbers.length === 0) throw new Error("empty array!");
 }
