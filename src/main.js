@@ -7,7 +7,6 @@ class Numberdrome {
     if (typeof n !== 'number' || !isFinite(n)) {
       return;
     }
-
     this.numbersList.push(n);
   }
 
@@ -16,45 +15,25 @@ class Numberdrome {
   }
 
   sum() {
-    let sum = 0;
-    if (this.numbersList.length) {
-      this.numbersList.forEach(num => sum += num);
-    }
-
-    return sum;
+    return this.numbersList.reduce((sum, num) => sum + num, 0);
   }
 
   product() {
-    let product = 1;
-    if (this.numbersList.length) {
-      this.numbersList.forEach(num => product *= num);
-    }
-
-    return product;
+    return this.numbersList.forEach((product, num) => product * num, 1);
   }
 
   min() {
-    try {
-      if (!this.numbersList.length) {
-        throw new Error("Incorrect data: can`t find minimum of empty array");
-      };
-
-      return Math.min(...this.numbersList);
-    } catch(error) {
-      return error.message;
-    }
+    if (!this.numbersList.length) {
+      throw new Error("Incorrect data: can`t find minimum of empty array");
+    };
+    return Math.min(...this.numbersList);
   }
 
   max() {
-    try {
-      if (!this.numbersList.length) {
-        throw new Error("Incorrect data: can`t find maximum of empty array");
-      };
-
-      return Math.max(...this.numbersList);
-    } catch(error) {
-      return error.message;
-    }
+    if (!this.numbersList.length) {
+      throw new Error("Incorrect data: can`t find maximum of empty array");
+    };
+    return Math.max(...this.numbersList);
   }  
 }
 
