@@ -16,18 +16,14 @@ class Numberdrome {
   }
 
   sum() {
-    const sumOfNumbers = this.numbers.reduce((acc, num) => {
-      acc += num;
-      return acc;
-    }, 0);
-    return sumOfNumbers;
+    let result = 0;
+    this.numbers.forEach(num => result += num);
+    return result;
   }
 
   product() {
-    const result = this.numbers.reduce((acc, num) => {
-      acc *= num;
-      return acc;
-    }, 1);
+    let result = 1;
+    this.numbers.forEach(num => result *= num);
     return result;
   }
 
