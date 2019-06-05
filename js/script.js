@@ -6,7 +6,9 @@ class Numberdrome {
   }
 
   addNumber(n) {
-    this.numberList.push(n)
+    if (typeof String(n)) {
+      this.numberList.push(n)
+    }
   }
 
   removeNumber(n) {
@@ -28,7 +30,7 @@ class Numberdrome {
       }
       throw new Error('there are no numbers');
     } catch (error) {
-      return error.message;
+      return error;
       }
   }
   max() {
@@ -38,7 +40,7 @@ class Numberdrome {
       }
       throw new Error('there are no numbers');
     } catch (error) {
-      return error.message;
+      return error;
       }
   }
 }
