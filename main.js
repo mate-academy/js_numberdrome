@@ -26,15 +26,22 @@ class Numberdrome {
   }
 
   min() {
+  	if(this.numbers.length === 0) {
+  		throw new Error('There are no numbers!');
+  	}
     return Math.min(...this.numbers)
   }
 
   max() {
+  	if(this.numbers.length === 0) {
+  		throw new Error('There are no numbers!');
+  	}
     return Math.max(...this.numbers)
   }
 }
 
 const numberdrome = new Numberdrome();
+console.log(numberdrome.min());
 numberdrome.addNumber(2);
 numberdrome.addNumber(0.5);
 numberdrome.addNumber(1);
