@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 class Numberdrome {
   constructor() {
@@ -6,7 +6,7 @@ class Numberdrome {
   }
 
   addNumber(n) {
-    if (typeof n === "number") {
+    if (typeof n === 'number') {
       this.list.push(n);
     } else {
       throw new Error("This isn't number");
@@ -14,14 +14,8 @@ class Numberdrome {
   }
 
   removeNumber(n) {
-    if (typeof n === "number") {
-      const index = this.list.findIndex((number, i) => {
-        if (number === n) {
-          return i;
-        }
-      });
-
-      this.list.splice(index, 1);
+    if (typeof n === 'number') {
+      this.list.splice(this.list.indexOf(n), 1);
     } else {
       throw new Error("This isn't number");
     }
@@ -41,7 +35,7 @@ class Numberdrome {
 
   min() {
     if (this.list.length === 0) {
-      throw new Error("The list is empty");
+      throw new Error('The list is empty');
     } else {
       return this.list.reduce((a, b) => {
         return Math.min(a, b);
@@ -51,7 +45,7 @@ class Numberdrome {
 
   max() {
     if (this.list.length === 0) {
-      throw new Error("The list is empty");
+      throw new Error('The list is empty');
     } else {
       return this.list.reduce((a, b) => {
         return Math.max(a, b);
@@ -64,6 +58,7 @@ const numb = new Numberdrome();
 
 numb.addNumber(1);
 numb.addNumber(2);
+numb.removeNumber(1);
 numb.addNumber(5);
 numb.addNumber(100);
 numb.addNumber(12);
