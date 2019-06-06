@@ -22,21 +22,21 @@ class Numberdrome {
   sum() {
      return this.listOfNumbers.reduce((sum, curr) => {
       return sum + curr;
-    })
+    }, 0)
   }
 
   product() {
     return this.listOfNumbers.reduce((product, curr) => {
       return product*curr;
-    })
+    }, 1)
   }
 
   min() {
-    return Math.min.apply(null, this.listOfNumbers);
+    return Math.min.apply(null, ...listOfNumbers);
   }
 
   max() {
-    return Math.max.apply(null, this.listOfNumbers);
+    return Math.max.apply(null, ...listOfNumbers);
   }
 }
 
