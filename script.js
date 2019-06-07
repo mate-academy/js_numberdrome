@@ -4,48 +4,52 @@ class Numberdrome {
   }
 
   addNumber(input) {
-    if(Array.isArray(input)) {
-      return this.numberList = [...this.numberList, ...input]
+    if (Array.isArray(input)) {
+      input.forEach(item => {
+        const num = parseFloat(item);
+        isNaN(num) || this.numberList.push(num);
+      })
+      return this.numberList;
     }
-    const num = parseFloat(input)
-    if(!isNaN(num)) {
-      this.numberList.push(num)
-      return this.numberList
+    const num = parseFloat(input);
+    if (!isNaN(num)) {
+      this.numberList.push(num);
+      return this.numberList;
     } else {
-      throw new Error('Invalid input')
+      throw new Error('Invalid input');
     }
   }
 
   removeNumber(input) {
-    if(Array.isArray(input)) {
+    if (Array.isArray(input)) {
       input.forEach(item => {
         this.numberList.splice(this.numberList.findIndex(el => el === item), 1);
       })
       return this.numberList;
     }
     const num = parseFloat(input);
-    if(!isNaN(num)) {
+    if (!isNaN(num)) {
       this.numberList.splice(this.numberList.findIndex(el => el === num), 1);
-      return this.numberList
+      return this.numberList;
     } else {
-      throw new Error('Invalid input')
+      throw new Error('Invalid input');
     }
   }
 
   sum() {
-    return this.numberList.reduce((acc, item) => acc += item);
+    return this.numberList.reduce((acc, item) => acc + item);
   }
 
   product() {
-    return this.numberList.reduce((acc, item) => acc *= item);
+    return this.numberList.reduce((acc, item) => acc * item);
   }
 
   min() {
-    return Math.min(...this.numberList)
+    return Math.min(...this.numberList);
   }
 
   max() {
-    return Math.max(...this.numberList)
+    return Math.max(...this.numberList);
   }
 };
 
