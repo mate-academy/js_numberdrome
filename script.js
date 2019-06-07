@@ -1,3 +1,5 @@
+"use strict"
+
 class Numberdrome {
   constructor() {
     this.listOfNumbers = [];
@@ -11,21 +13,14 @@ class Numberdrome {
     while(this.listOfNumbers.includes(n)) {
       this.listOfNumbers.splice(this.listOfNumbers.indexOf(n), 1);
     }
-    return this.listOfNumbers;
   }
 
   sum() {
-    if (this.listOfNumbers.length === 0){
-      return 0;
-    }
-    return this.listOfNumbers.reduce((sum, current) => sum + current);
+    return this.listOfNumbers.reduce((sum, current) => sum + current, 0);
   }
 
   product() {
-    if (this.listOfNumbers.length === 0){
-      return 1;
-    }
-    return this.listOfNumbers.reduce((sum, current) => sum * current);
+    return this.listOfNumbers.reduce((sum, current) => sum * current, 1);
   }
 
   min() {
@@ -36,7 +31,7 @@ class Numberdrome {
     this.listOfNumbers.sort((a, b) => a - b)
     return this.listOfNumbers[0];
     } catch(e) {
-      return e.message;
+      return e;
     }
   }
 
@@ -48,7 +43,11 @@ class Numberdrome {
       this.listOfNumbers.sort((a, b) => a - b);
       return this.listOfNumbers[this.listOfNumbers.length - 1];
       } catch(e) {
-        return e.message;
+        return e;
     }
   }
 }
+
+const list = new Numberdrome;
+
+console.log(list.min());
