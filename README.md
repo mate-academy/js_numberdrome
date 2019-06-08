@@ -1,3 +1,6 @@
+GH-Pages 
+https://sherjlok15.github.io/js_numberdrome/
+
 # Numberdrome
 
 Create the `Numberdrome` class with the following methods:
