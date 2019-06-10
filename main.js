@@ -8,66 +8,61 @@ class Numberdrome {
   }
 
   removeNumber(n) {
-    const index = this.numbers.findIndex(num => num === n);
-    this.numbers.splice(index, 1);
+    const index = this.numbers.indexOf(n);
+    if (index >= 0) {
+      this.numbers.splice(index, 1);
+      return;
+    }
+    console.log(`Have not element width index ${n}`);
   }
 
   sum() {
-    if (this.numbers.length) {
-      return this.numbers.reduce(
-        (accumulator, currentValue) => accumulator + currentValue
-      );
-    } else {
-      return 0;
+    if (this.numbers.length && !this.numbers.some(num => isNaN(num))) {
+      return this.numbers.reduce((acc, cur) => acc + cur);
     }
+    return 0;
   }
 
   product() {
-    if (this.numbers.length) {
-      return this.numbers.reduce(
-        (accumulator, currentValue) => accumulator * currentValue
-      );
-    } else {
-      return 1;
+    if (this.numbers.length && !this.numbers.some(num => isNaN(num))) {
+      return this.numbers.reduce((acc, cur) => acc * cur);
     }
+    return 1;
   }
 
   min() {
-    if (this.numbers.length) {
-      let min = Infinity;
-      this.numbers.map(a => {
-        if (a < min) {
-          min = a;
+    try {
+        const min = Math.min.apply(null, this.numbers);
+        if (!min) {
+          throw new SyntaxError('there are no numbers');
         }
-      })    
       return min;
-    } else {
-      return console.log('error: there are no numbers');
+    } catch(err) {
+      console.log(err);
     }
   }
 
   max() {
-    if (this.numbers.length) {
-      let max = -Infinity;
-      this.numbers.map(a => {
-        if (a > max) {
-          max = a;
-        }
-      })    
+    try {
+      const max = Math.max.apply(null, this.numbers);
+      if (!max) {
+        throw new SyntaxError('there are no numbers');
+      }
       return max;
-    } else {
-      return console.log('error: there are no numbers');
+    } catch(err) {
+      console.log(err);
     }
   }
 } 
 
-const a = new Numberdrome();
+const newNum = new Numberdrome();
 
-a.addNumber(1);
-a.addNumber(2);
-a.addNumber(3);
-a.sum();
-a.product();
-a.min();
-a.max();
-a.removeNumber(2);
+newNum.addNumber(1);
+newNum.addNumber(2);
+newNum.addNumber(3);
+newNum.addNumber(4);
+newNum.addNumber("g");
+newNum.sum();
+newNum.product();
+newNum.min();
+newNum.max();
