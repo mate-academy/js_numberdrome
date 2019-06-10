@@ -1,3 +1,5 @@
+"use strict";
+
 class Numberdrome {
   constructor() {
     this.numbers = [];
