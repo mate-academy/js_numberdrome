@@ -14,52 +14,40 @@ class Numberdrome {
   }
 
   sum() {
-    return this.numbersArr.length > 0 ? this.numbersArr.reduce((a,b) => a + b, 0) : 0;
+    return this.numbersArr.reduce((a, b) => a + b, 0);
   }
 
   product() {
-    return this.numbersArr.length > 0 ? this.numbersArr.reduce((a,b) => a * b, 1) : 1;
+    return this.numbersArr.reduce((a, b) => a * b, 1);
   }
 
   min() {
-    try {
-      if (this.numbersArr.length <= 0) {
-        throw new Error("No numbers in array");
-      } else {
-        return Math.min(...this.numbersArr);
-      }
+    if (this.numbersArr.length <= 0) {
+      throw new Error("No numbers in array");
     }
-    catch(err) {
-      return err;
-    }
+    return Math.min(...this.numbersArr);
   }
 
   max() {
-    try {
-      if (this.numbersArr.length <= 0) {
-        throw new Error("No numbers in array");
-      } else {
-        return Math.max(...this.numbersArr);
-      }
+    if (this.numbersArr.length <= 0) {
+      throw new Error("No numbers in array");
     }
-    catch(err) {
-      return err;
-    }
+    return Math.min(...this.numbersArr);
   }
 }
 
-let newArray = new Numberdrome();
-newArray.addNumber(2);
-newArray.addNumber(3);
-newArray.addNumber(12);
-newArray.addNumber(13);
+const newArr = new Numberdrome();
+newArr.addNumber(2);
+newArr.addNumber(3);
+newArr.addNumber(12);
+newArr.addNumber(13);
 
-console.log(newArray.sum());
-console.log(newArray.product());
-console.log(newArray.min());
-console.log(newArray.max());
+console.log(newArr.sum());
+console.log(newArr.product());
+console.log(newArr.min());
+console.log(newArr.max());
 
-let emptyArray = new Numberdrome();
+const emptyArray = new Numberdrome();
 console.log(emptyArray.min());
 console.log(emptyArray.max());
 console.log(emptyArray.sum());
