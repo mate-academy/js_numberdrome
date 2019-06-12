@@ -32,14 +32,10 @@ class Numberdrome {
   }
 
   min() {
-    try {
-      if (!this.num.length) {
-        throw 'error!'
-      }
-      return Math.min(...this.num);
-    } catch (e) {
-      console.log(e);
+    if (!this.numbers.length) {
+      throw new Error('list is empty!');
     }
+        return Math.min(...this.numbers);
   }
 
   max() {
