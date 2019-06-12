@@ -1,13 +1,13 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-let n = new Numberdrome();
-n.addNumber(10);
-n.addNumber(12);
-console.log(n.sum());
-console.log(n.product());
-console.log(n.min());
-console.log(n.max());
+  let n = new Numberdrome();
+  n.addNumber(10);
+  n.addNumber(12);
+  console.log(n.sum());
+  console.log(n.product());
+  console.log(n.min());
+  console.log(n.max());
 });
 
 class Numberdrome {
@@ -24,7 +24,7 @@ class Numberdrome {
   }
 
   sum() {
-    return this.num.reduce(((x, y) => x + y),0)
+    return this.num.reduce(((x, y) => x + y), 0)
   }
 
   product() {
@@ -36,20 +36,16 @@ class Numberdrome {
       if (!this.num.length) {
         throw 'error!'
       }
-    return Math.min(...this.num);
+      return Math.min(...this.num);
     } catch (e) {
       console.log(e);
     }
   }
 
   max() {
-    try {
-      if (!this.num.length) {
-        throw  'error!'
-      }
-    return Math.max(...this.num);
-    } catch (e) {
-      console.log(e);
+    if (!this.numbers.length) {
+      throw new Error('list is empty!');
     }
+    return Math.max(...this.numbers);
   }
 }
