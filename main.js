@@ -6,7 +6,7 @@ class Numberdrome {
   }
 
   addNumber(n) {
-    this.numbers.push(n);
+    !isNaN(n) && this.numbers.push(n);
   }
 
   removeNumber(n) {
