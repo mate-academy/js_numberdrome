@@ -24,22 +24,29 @@ class Numberdrome {
     }
 
     min() {
+        if (this.numbers.length === 0){
+            throw new Error('error!');
+        }
         return Math.min(...this.numbers);
     }
 
     max() {
+        if (this.numbers.length === 0){
+            throw new Error('error!');
+        }
         return Math.max(...this.numbers);
     }
 
 }
 
-// const arr = new Numberdrome();
-// arr.addNumber(1)
-// arr.addNumber(2)
-// arr.removeNumber(1)
-// arr.sum()
-// arr.product()
-// arr.min()
-// arr.max()
-// arr.addNumber(8)
+const arr = new Numberdrome();
+arr.addNumber(1)
+arr.addNumber(2)
+arr.addNumber(13)
+arr.removeNumber(1)
+arr.sum()
+arr.product()
+arr.min()
+arr.max()
+arr.addNumber(8)
 
