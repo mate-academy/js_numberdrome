@@ -4,10 +4,8 @@ class Numberdrome {
     }
 
     addNumber(n) {
-        if (typeof n === 'number'){
+        if (!isNaN(n)) {
             return this.numbers.push(n)
-        } else {
-            console.log('Error: Argument is not a number.') // пыталась понять как генерировать свои ошибки, не поняла:)
         }
     };
 
@@ -25,13 +23,23 @@ class Numberdrome {
     }
 
     min() {
-        return this.numbers.length > 0 ? Math.min.apply(null, this.numbers) :
-            'Error: Array is empty.';
+        try {
+            if (this.numbers.length === 0) throw 'Error: Array is empty.'
+        }
+        catch(err) {
+            return err;
+        }
+        return  Math.min.apply(null, this.numbers)
     }
 
     max() {
-        return this.numbers.length > 0 ? Math.max.apply(null, this.numbers) :
-            'Error: Array is empty.';
+        try {
+            if (this.numbers.length === 0) throw 'Error: Array is empty.'
+        }
+        catch(err) {
+            return err;
+        }
+        return Math.max.apply(null, this.numbers)
     }
 }
 
@@ -49,7 +57,6 @@ console.log(positiveCheck.min()); // -21
 console.log(positiveCheck.max()); // 905
 
 const negativeCheck =  new Numberdrome();
-negativeCheck.addNumber('someString'); // Error: Argument is not a number.
 console.log(negativeCheck.numbers); // []
 console.log(negativeCheck.sum()); // 0
 console.log(negativeCheck.product()); // 1
