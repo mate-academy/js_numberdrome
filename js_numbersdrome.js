@@ -1,61 +1,44 @@
 class Numberdrome{
   constructor() {
-    this.list = new Set();
+    this.list = [];
   }
 
   addNumber(n) {
-    this.list.add(n);
+    this.list.push(n);
   }
 
   removeNumber(n) {
-    this.list.delete(n);
+    const index = this.list.indexOf(n);
+    if (index !== -1) {
+      this.list.splice(index, 1);
+    }
   }
 
   sum() {
-    let res = 0;
-    for (let num of this.list) {
-      res += num;
-    }
-    return res;
+    return this.list.reduce((a,b) => a + b, 0);
   }
 
   product() {
-    let res = 1;
-    for (let num of this.list) {
-      res *= num;
-    }
-    return res;
+    return this.list.reduce((a,b) => a * b, 1);
   }
 
   min() {
     try {
-      if (this.list.size === 0) throw 'there are no numbers'
+      if (this.list.length === 0) throw new Error('there are no numbers');
     }
     catch(err) {
       return err;
     }
-    let res = Infinity;
-    for (let num of this.list) {
-      if (num < res) {
-        res = num;
-      }
-    }
-    return res;
+    return Math.min(...this.list);
   }
 
   max() {
     try {
-      if (this.list.size === 0) throw 'there are no numbers'
+      if (this.list.length === 0) throw new Error('there are no numbers');
     }
     catch(err) {
       return err;
     }
-    let res = -Infinity;
-    for (let num of this.list) {
-      if (num > res) {
-        res = num;
-      }
-    }
-    return res;
+    return Math.max(...this.list);
   }
 }
