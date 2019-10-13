@@ -31,7 +31,6 @@ class Numberdrome {
   }
 
   static checkArray(arrayVar, max) {
-    console.log(arrayVar.length,max);
     if (arrayVar.length) {
       return max ? `max ${Math.max(...arrayVar)}` : `min ${Math.min(...arrayVar)}`;
     }
