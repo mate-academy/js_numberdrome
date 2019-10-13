@@ -6,47 +6,48 @@ class Numberdrome {
 
   addNumber(num) {
     this.numbers.push(num);
-    console.log(`${num} added to list`);
+    return `${num} added to list`
   }
 
   removeNumber(num){
     this.numbers = this.numbers.filter(e => e !== num);
-    console.log(`${num} removed from list`);
+    return `${num} removed from list`
   }
 
   sum() {
-    console.log(`sum = ${this.numbers.reduce((acc, curr) => acc + curr, 0)}`)
+    return `sum = ${this.numbers.reduce((acc, curr) => acc + curr, 0)}`;
   }
 
   product() {
-    console.log(`product = ${this.numbers.reduce((acc, curr) => acc * curr, 1)}`)
+    return `product = ${this.numbers.reduce((acc, curr) => acc * curr, 1)}`;
   }
 
   max() {
-    Numberdrome.checkArray(this.numbers, true);
+    return Numberdrome.checkArray(this.numbers, true);
   }
 
   min() {
-    Numberdrome.checkArray(this.numbers, false);
+    return Numberdrome.checkArray(this.numbers, false);
   }
 
-  static checkArray(arrayVar, maxTrueMinFalse) {
+  static checkArray(arrayVar, max) {
+    console.log(arrayVar.length,max);
     if (arrayVar.length) {
-      return console.log(maxTrueMinFalse ? `max ${Math.max(...arrayVar)}` : `min ${Math.min(...arrayVar)}`);
+      return max ? `max ${Math.max(...arrayVar)}` : `min ${Math.min(...arrayVar)}`;
     }
-    console.log('array is empty')
+    return 'array is empty';
   }
 }
 
-let a = new Numberdrome();
+let numberdrome = new Numberdrome();
 
-a.addNumber(3);
-a.addNumber(5);
-a.addNumber(7);
-a.removeNumber(3);
-a.sum();
-a.product();
-a.max();
-a.min();
+console.log(numberdrome .addNumber(3));
+console.log(numberdrome.addNumber(5));
+console.log(numberdrome.addNumber(7));
+console.log(numberdrome.removeNumber(3));
+console.log(numberdrome.sum());
+console.log(numberdrome.product());
+console.log(numberdrome.max());
+console.log(numberdrome.min());
 
 
