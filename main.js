@@ -1,49 +1,44 @@
 class Numberdrome {
   constructor() {
-    this.numberdrome = new Set();
-    const setlLength = this.numberdrome.length === 0;
+    this.numberdrome = [];
   }
 
   addNumber(n) {
-    this.numberdrome.add(n)
+    this.numberdrome.push(n)
   }
 
   removeNumber(n) {
-    this.numberdrome.delete(n)
+    this.numberdrome.splice(this.numberdrome.indexOf(n), 1);
   }
 
   sum() {
     let myArr = Array.from(this.numberdrome);
-    if (this.setlLength) {
+    if (!this.numberdrome.length) {
       return 0;
-    } else {
-      return myArr.reduce((a, b) => a + b, 0);
     }
+    return myArr.reduce((a, b) => a + b, 0);
   }
 
   product() {
     let myArr = Array.from(this.numberdrome);
-    if (this.setlLength) {
+    if (!this.numberdrome.length) {
       return 1;
-    } else {
-      return myArr.reduce((a, b) => a * b, 1);
     }
+    return myArr.reduce((a, b) => a * b, 1);
   }
 
   min() {
-    if (this.setlLength) {
-      return `Error! There are no numbers;`;
-    } else {
-      return Math.min(...this.numberdrome);
+    if (!this.numberdrome.length) {
+      return (`Error! There are no numbers;`);
     }
+    return Math.min(...this.numberdrome);
   }
 
   max() {
-    if (this.setlLength) {
-      return `Error! There are no numbers;`;
-    } else {
-      return Math.max(...this.numberdrome);
+    if (!this.numberdrome.length) {
+      return (`Error! There are no numbers;`);
     }
+    return Math.max(...this.numberdrome);
   }
 }
 
@@ -70,6 +65,9 @@ elseArray.addNumber(2);
 elseArray.addNumber(3);
 elseArray.addNumber(4);
 elseArray.removeNumber(2);
+elseArray.removeNumber(1);
+elseArray.removeNumber(3);
+elseArray.removeNumber(4);
 console.log(`suma: ${elseArray.sum()}`);
 console.log(`product this numbers is: ${elseArray.product()}`);
 console.log(`min: ${elseArray.min()}`);
