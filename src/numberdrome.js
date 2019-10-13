@@ -10,7 +10,12 @@ class Numberdrome {
   }
 
   removeNumber(n) {
-    this.list.splice(this.list.indexOf(n), 1);
+    const elementIsInList = this.list.indexOf(n);
+    if(elementIsInList !== -1) {
+      this.list.splice(elementIsInList, 1);
+    } else {
+      console.log('Error: this element is absent.')
+    }
   }
 
   sum() {
@@ -38,6 +43,7 @@ n.addNumber(3);
 n.addNumber(4);
 console.log('n.list = ' + n.list);
 
+n.removeNumber(-5);
 n.removeNumber(3);
 console.log('n.list = ' + n.list);
 
