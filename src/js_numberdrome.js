@@ -9,7 +9,11 @@ class Numberdrome {
 
   removeNumber = function(n) {
     let index = this.numberList.indexOf(n);
+    if (index !== -1) {
     this.numberList.splice(index, 1);
+    } else {
+      throw console.error('Такого елемента нет!');
+    }
   };
 
   sum = function() {
