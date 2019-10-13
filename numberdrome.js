@@ -4,14 +4,16 @@ class Numberdrome {
     }
 
     addNumber(n) {
-        if (!isNaN(n)) {
-            return this.numbers.push(n)
+        if (typeof n === 'number'){
+            this.numbers.push(n);
         }
     };
 
     removeNumber(n) {
         let index = this.numbers.indexOf(n);
-        return this.numbers.splice(index, 1);
+        if (index > -1) {
+            return this.numbers.splice(index, 1);
+        }
     }
 
     sum() {
@@ -23,23 +25,11 @@ class Numberdrome {
     }
 
     min() {
-        try {
-            if (this.numbers.length === 0) throw 'Error: Array is empty.'
-        }
-        catch(err) {
-            return err;
-        }
-        return  Math.min.apply(null, this.numbers)
+        return this.numbers.length !== 0 ? Math.min(...this.numbers) :'Error: Array is empty.';
     }
 
     max() {
-        try {
-            if (this.numbers.length === 0) throw 'Error: Array is empty.'
-        }
-        catch(err) {
-            return err;
-        }
-        return Math.max.apply(null, this.numbers)
+        return this.numbers.length !== 0 ? Math.max(...this.numbers) : 'Error: Array is empty.';
     }
 }
 
