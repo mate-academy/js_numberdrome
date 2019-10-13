@@ -8,24 +8,22 @@ class Numberdrome {
   }
 
   removeNumber(n) {
-    let deletedNumber = this.array.indexOf(n);
-    return this.array.splice(deletedNumber, 1);
+    let deletedNumber = this.numbers.indexOf(n);
+    if (index > -1) {
+      this.numbers.splice(deletedNumber, 1);
+    }
   }
 
   sum() {
     if (this.array.length === 0) {
       return 0;
-    } else {
-      return this.array.reduce((a, b) => a + b, 0);
-    }
+    } return this.array.reduce((a, b) => a + b, 0);
   }
 
   product() {
     if (this.array.length === 0) {
       return 1;
-    } else {
-      return this.array.reduce((a, b) => a * b);
-    }
+    } return this.array.reduce((a, b) => a * b);
   }
 
   min() {
