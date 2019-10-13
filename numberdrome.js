@@ -4,11 +4,11 @@ class Numberdrome {
     }
 
     addNumber(n) {
-      if (typeof (+n) === "number") {
+      if (Number.isNaN(+n)) {
+        throw 'This variable is unable to convert!';
+      } else {
         this.list.push(+n);
       }
-
-      throw new Error('This variable is unable to convert!')
     }
 
     removeNumber(n) {
