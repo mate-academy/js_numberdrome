@@ -18,7 +18,10 @@ class Numberdrome {
   addNumber(n) {
     if (typeof n == 'number'){
       this.array.push(n);
-    } 
+    }
+    else {
+        alert('not a number'); 
+    }
   }
 
   removeNumber(n) {
@@ -27,7 +30,7 @@ class Numberdrome {
     this.array.splice(position, 1);
     }
     else {
-        return 'not a number';
+        alert('not a number'); 
     }
   }
 
