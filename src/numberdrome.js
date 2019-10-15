@@ -26,7 +26,7 @@ class Numberdrome {
     }
 
     min() {
-        if (this.array.length === 0) {
+        if (!this.array.length) {
             throw "The list is empty!"
         }
         return Math.min(...this.array);
