@@ -8,8 +8,9 @@ class Numberdrome {
   }
 
   removeNumber(n) {
-    if (this.list.includes(n)) {
-      this.list.splice(this.list.indexOf(n), 1);
+    let indexSearchedElement = this.list.indexOf(n);
+    if (indexSearchedElement !== -1) {
+      this.list.splice(indexSearchedElement, 1);
     } else {
       return `There is no such number`;
     }
