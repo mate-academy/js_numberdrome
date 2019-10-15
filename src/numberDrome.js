@@ -31,10 +31,11 @@ class Numberdrome {
   }
 
   min() {
-    return Math.min.apply(null, this.numbersArr); 
+    return Math.min(...this.numbersArr); 
   }
 
   max() {
-    return Math.max.apply(null, this.numbersArr); 
+    return Math.max(...this.numbersArr); 
   }
 }
+
