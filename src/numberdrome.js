@@ -8,50 +8,35 @@ class Numberdrome {
     }
 
     removeNumber(n) {
-        debugger;
-        return this.array.splice(this.array.indexOf(n), 1);
+        let isNubmer = /^\d+$/;
+        if (isNubmer.test(n)) {
+            return this.array.splice(this.array.indexOf(n), 1);
+        } else {
+            throw "The value is not a number";
+        }
+
     }
 
     sum() {
-        let sum = 0;
-        for (let number of this.array) {
-            sum += number;
-        }
-        return sum;
+        return this.array.reduce((a, b) => a + b, 0);
     }
 
     product() {
-        let product = 1;
-        for (let number of this.array) {
-            product *= number;
-        }
-        return product;
+        return this.array.reduce((a, b) => (a * b), 1);
     }
 
     min() {
         if (this.array.length === 0) {
             throw "The list is empty!"
         }
-        let min = this.array[0];
-        for (let i = 1; i < this.array.length; i++) {
-            if (this.array[i] < min) {
-                min = this.array[i];
-            }
-        }
-        return min;
+        return Math.min(...this.array);
     }
 
     max() {
-        if (this.array.length === 0) {
+        if (!this.array.length) {
             throw "The list is empty!"
         }
-        let max = this.array[0];
-        for (let i = 1; i < this.array.length; i++) {
-            if (this.array[i] > max) {
-                max = this.array[i];
-            }
-        }
-        return max;
+        return Math.max(...this.array);
     }
 }
 
