@@ -8,23 +8,21 @@ class Numberdrome {
   }
 
   removeNumber(n) {
-    this.numberdrome.splice(this.numberdrome.indexOf(n), 1);
+    this.numberdrome.splice(this.numberdrome.includes(n), 1);
   }
 
   sum() {
-    let myArr = Array.from(this.numberdrome);
     if (!this.numberdrome.length) {
       return 0;
     }
-    return myArr.reduce((a, b) => a + b, 0);
+    return this.numberdrome.reduce((a, b) => a + b, 0);
   }
 
   product() {
-    let myArr = Array.from(this.numberdrome);
     if (!this.numberdrome.length) {
       return 1;
     }
-    return myArr.reduce((a, b) => a * b, 1);
+    return this.numberdrome.reduce((a, b) => a * b, 1);
   }
 
   min() {
