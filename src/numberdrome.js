@@ -6,7 +6,11 @@ class Numberdrome {
   }
 
   addNumber(n) {
+    if(!isNaN(n)){   // проверка, является ли n числом
     this.list.push(n);
+    } else {
+      console.error('n is not a number.');
+    }
   }
 
   removeNumber(n) {
@@ -14,7 +18,7 @@ class Numberdrome {
     if(elementIsInList !== -1) {
       this.list.splice(elementIsInList, 1);
     } else {
-      console.log('Error: this element is absent.')
+      console.error('This element is absent.');
     }
   }
 
