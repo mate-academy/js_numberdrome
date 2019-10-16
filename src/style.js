@@ -8,21 +8,18 @@ class Numberdrome {
   }
   
   removeNumber(n) {
-    if (!indexOf(n) === -1) {
-      this.arr.splice(indexOf(n), 1);
+    const index = indexOf(n);
+    if (!index === -1) {
+      this.arr.splice(index, 1);
     }
   }
   
   sum() {
-    let result = 0;
-    this.arr.forEach(item =>  result += item);
-    return result;
+    return this.arr.reduce((accumulator, currentValue) => (accumulator + currentValue), 0);
   }
   
   product() {
-    let product = 1;
-    this.arr.forEach(item => product *= item);
-    return product;
+    return this.arr.reduce((accumulator, currentValue) => (accumulator *= currentValue), 1);
   }
   
   max() {
