@@ -15,7 +15,7 @@ class Numberdrome {
   }
 
   sum() {
-    let sumNumber = 0;
+    const sumNumber = 0;
     if (this.numbers.length === 0) {
       return sumNumber
     }
@@ -23,23 +23,20 @@ class Numberdrome {
   }
 
   product() {
-    let productNumber = 1;
+    const productNumber = 1;
     if (this.numbers.length === 0) {
       return productNumber;
     }
-    for (let n of this.numbers) {
-      productNumber *= n;
-    }
-    return productNumber;
+    return this.numbers.reduce((acc, cur) => acc * cur);
   }
 
   min() {
     if (this.numbers.length === 0) return 'error';
-    return (Math.min(...this.numbers) || 'error');
+    return Math.min(...this.numbers);
   }
 
   max() {
     if (this.numbers.length === 0) return 'error';
-    return (Math.max(...this.numbers)  || 'error');
+    return Math.max(...this.numbers);
   }
 }
