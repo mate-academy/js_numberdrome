@@ -5,9 +5,12 @@ class Numberdrome {
     }
 
     addNumber(num) {
-        this.list.push(+num);
-        console.log(this.list);
-    }
+        if(typeof n === 'number'){
+    this.list.push(n);
+} else {
+    console.error('n is not a number.');
+}
+}
 
     removeNumber(num) {
         this.list.splice(this.list.indexOf(num), 1);
@@ -16,13 +19,13 @@ class Numberdrome {
 
     sum() {
         let result = 0;
-        this.list.forEach(value => result += value);
+        this.list.reduce((a, b) => a + b, 0);
         console.log(result);
     }
 
     product() {
         let result = 1;
-        this.list.forEach(value => result *= value);
+        this.list.reduce((a, b) => a * b, 1);
         console.log(result);
     }
 
