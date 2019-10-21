@@ -25,7 +25,7 @@ class Numberdrome {
   }
 
   removeNumber(n) {
-    if (typeof n == 'number' && this.array.includes(n)) {
+    if (typeof n == 'number') {
     let position = this.array.indexOf(n);
     this.array.splice(position, 1);
     }
