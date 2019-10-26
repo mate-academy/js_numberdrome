@@ -8,42 +8,32 @@ class Numberdrome {
   }
 
   removeNumber(n) {
-    for (let i = 0; i < this.list.length; i++) {
-      if (this.list[i] === n) {
-        this.list.splice(i);
-      }
-    }
+    this.list = this.list.filter(element => {
+      return element !== n;
+    });
   }
 
   sum() {
-    if (this.list.length === 0) {
-      return 0;
-    }
     const result = this.list.reduce((sum, current) => {
       return sum + current;
-    });
+    }, 0);
 
     return result;
   }
 
   product() {
-    if (this.list.length === 0) {
-      return 1;
-    }
     const result = this.list.reduce((sum, current) => {
       return sum * current;
-    });
+    }, 1);
 
     return result;
   }
 
   min() {
-    const sorted = this.list.sort((a,b) => a-b);
-    return this.list.length === 0 ? 'error' : this.list[0];
+    return this.list.length === 0 ? 'error' : Math.min(...this.list);
   }
 
   max() {
-    const sorted = this.list.sort((a,b) => a-b);
-    return this.list.length === 0 ? 'error' : this.list[this.list.length - 1];
+    return this.list.length === 0 ? 'error' : Math.max(...this.list);
   }
 }
