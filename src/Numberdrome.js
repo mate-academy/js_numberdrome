@@ -22,11 +22,15 @@ class Numberdrome {
   };
 
   min() {
-    return Math.min(...this.numbers);
+    return (this.numbers
+      ? Math.min(...this.numbers)
+      : Error);
   };
 
   max() {
-    return Math.max(...this.numbers);
+    return (this.numbers
+      ? Math.max(...this.numbers)
+      : Error);
   };
 }
 
