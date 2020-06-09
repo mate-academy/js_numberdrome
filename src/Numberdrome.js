@@ -22,13 +22,13 @@ class Numberdrome {
   };
 
   min() {
-    return (this.numbers
+    return (this.numbers.length
       ? Math.min(...this.numbers)
       : Error);
   };
 
   max() {
-    return (this.numbers
+    return (this.numbers.length
       ? Math.max(...this.numbers)
       : Error);
   };
