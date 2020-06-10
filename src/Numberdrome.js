@@ -22,10 +22,6 @@ class Numberdrome {
   }
 
   product() {
-    if (this.numbers.length === 0) {
-      return 1;
-    }
-
     return this.numbers.reduce((a, b) => a * b, 1);
   }
 
