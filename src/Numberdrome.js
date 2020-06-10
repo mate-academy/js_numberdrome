@@ -25,11 +25,15 @@ class Numberdrome {
   }
 
   min() {
-    return Math.min(...this.list);
+    return this.list.length
+      ? Math.min(...this.list)
+      : Error;
   }
 
   max() {
-    return Math.max(...this.list);
+    return this.list.length
+      ? Math.max(...this.list)
+      : Error;
   }
 }
 
