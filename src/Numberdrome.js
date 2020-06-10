@@ -22,8 +22,7 @@ class Numberdrome {
   product() {
     return this.list.length
       ? this.list.reduce((accum, current) => accum * current)
-      : 1
-      ;
+      : 1;
   }
 
   min() {
