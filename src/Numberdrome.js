@@ -11,10 +11,10 @@ class Numberdrome {
     this.list = this.list.filter(item => item !== n);
   }
   sum() {
-    return this.list.reduce((acc, item) => acc + item) || 0;
+    return this.list.reduce((acc, item) => acc + item, 0);
   }
   product() {
-    return this.list.reduce((acc, item) => acc * item) || 1;
+    return this.list.reduce((acc, item) => acc * item, 1);
   }
 
   min() {
