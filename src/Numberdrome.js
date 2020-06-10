@@ -12,8 +12,6 @@ class Numberdrome {
 
   removeNumber(number) {
     this.list = this.list.filter(num => num !== number);
-
-    return this.list;
   }
 
   sum() {
