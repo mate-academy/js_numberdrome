@@ -2,37 +2,35 @@
 
 class Numberdrome {
   constructor() {
-    this.listOfNumber = [];
+    this.listOfNumbers = [];
   }
 
   addNumber(n) {
-    this.listOfNumber.push(n);
+    this.listOfNumbers.push(n);
   }
 
   removeNumber(n) {
-    while (this.listOfNumber.indexOf(n) !== -1) {
-      this.listOfNumber.splice(this.listOfNumber.indexOf(n), 1);
-    }
+    this.listOfNumbers = this.listOfNumbers.filter(digit => digit !== n);
   }
 
   sum() {
-    return this.listOfNumber.reduce((accumulator, currentValue) => {
+    return this.listOfNumbers.reduce((accumulator, currentValue) => {
       return accumulator + currentValue;
-    });
+    }, 0);
   }
 
   product() {
-    return this.listOfNumber.reduce((accumulator, currentValue) => {
+    return this.listOfNumbers.reduce((accumulator, currentValue) => {
       return accumulator * currentValue;
-    });
+    }, 1);
   }
 
   min() {
-    return Math.min.apply(null, this.listOfNumber);
+    return Math.min.apply(null, this.listOfNumbers);
   }
 
   max() {
-    return Math.max.apply(null, this.listOfNumber);
+    return Math.max.apply(null, this.listOfNumbers);
   }
 }
 
