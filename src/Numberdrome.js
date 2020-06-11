@@ -26,11 +26,15 @@ class Numberdrome {
   }
 
   min() {
-    return Math.min.apply(null, this.listOfNumbers);
+    return this.listOfNumbers.length !== 0
+      ? Math.min.apply(null, this.listOfNumbers)
+      : new Error('List of numbers is empty');
   }
 
   max() {
-    return Math.max.apply(null, this.listOfNumbers);
+    return this.listOfNumbers.length !== 0
+      ? Math.max.apply(null, this.listOfNumbers)
+      : new Error('List of numbers is empty');
   }
 }
 
