@@ -3,6 +3,7 @@
 class Numberdrome {
   constructor() {
     this.numbers = [];
+    this.error = new Error('No numbers');
   };
 
   addNumber(n) {
@@ -26,11 +27,17 @@ class Numberdrome {
   }
 
   min() {
-    return Math.min(...this.numbers);
+    if (this.numbers.length !== 0) {
+      return Math.min(...this.numbers);
+    };
+    throw this.error;
   }
 
   max() {
-    return Math.max(...this.numbers);
+    if (this.numbers.length !== 0) {
+      return Math.max(...this.numbers);
+    };
+    throw this.error;
   }
 }
 
