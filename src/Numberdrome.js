@@ -24,13 +24,13 @@ class Numberdrome {
   }
 
   min() {
-    return this.list.length > 0
+    return this.list.length
       ? Math.min(...this.list)
       : Error;
   }
 
   max() {
-    return this.list.length > 0
+    return this.list.length
       ? Math.max(...this.list)
       : Error;
   }
