@@ -22,23 +22,15 @@ class Numberdrome {
   }
 
   min() {
-    let result;
-
-    this.numbers.length === 0
-      ? result = 'List empty'
-      : result = Math.min(...this.numbers);
-
-    return result;
+    return this.numbers.length === 0
+      ? new Error('List empty')
+      : Math.min(...this.numbers);
   }
 
   max() {
-    let result;
-
-    this.numbers.length === 0
-      ? result = 'List empty'
-      : result = Math.max(...this.numbers);
-
-    return result;
+    return this.numbers.length === 0
+      ? new Error('List empty')
+      : Math.max(...this.numbers);
   }
 }
 
