@@ -14,22 +14,27 @@ class Numberdrome {
   }
 
   sum() {
-    return this.numbers
-      .reduce((accumulator, number) => accumulator + number);
+    return this.numbers.length
+      ? this.numbers.reduce((accumulator, number) => accumulator + number)
+      : 0;
   }
 
   product() {
-    return this.numbers.length === 0
-      ? 1
-      : this.numbers.reduce((accumulator, number) => accumulator * number);
+    return this.numbers.length
+      ? this.numbers.reduce((accumulator, number) => accumulator * number)
+      : 1;
   }
 
   min() {
-    return Math.min(...this.numbers);
+    return this.numbers.length
+      ? Math.min(...this.numbers)
+      : new Error('There are no numbers');
   }
 
   max() {
-    return Math.max(...this.numbers);
+    return this.numbers.length
+      ? Math.max(...this.numbers)
+      : new Error('There are no numbers');
   }
 }
 
