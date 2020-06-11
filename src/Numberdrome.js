@@ -2,38 +2,38 @@
 
 class Numberdrome {
   constructor() {
-    this.listOfNumbers = [];
+    this.list = [];
   }
 
   addNumber(n) {
-    this.listOfNumbers.push(n);
+    this.list.push(n);
   }
 
   removeNumber(n) {
-    this.listOfNumbers = this.listOfNumbers.filter(digit => digit !== n);
+    this.list = this.list.filter(digit => digit !== n);
   }
 
   sum() {
-    return this.listOfNumbers.reduce((accumulator, currentValue) => {
+    return this.list.reduce((accumulator, currentValue) => {
       return accumulator + currentValue;
     }, 0);
   }
 
   product() {
-    return this.listOfNumbers.reduce((accumulator, currentValue) => {
+    return this.list.reduce((accumulator, currentValue) => {
       return accumulator * currentValue;
     }, 1);
   }
 
   min() {
-    return this.listOfNumbers.length !== 0
-      ? Math.min.apply(null, this.listOfNumbers)
+    return this.list.length !== 0
+      ? Math.min.apply(null, this.list)
       : new Error('List of numbers is empty');
   }
 
   max() {
-    return this.listOfNumbers.length !== 0
-      ? Math.max.apply(null, this.listOfNumbers)
+    return this.list.length !== 0
+      ? Math.max.apply(null, this.list)
       : new Error('List of numbers is empty');
   }
 }
