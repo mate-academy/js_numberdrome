@@ -19,8 +19,9 @@ class Numberdrome {
   }
 
   product() {
-    return this.list.reduce(
-      (accumulator, currentNumber) => accumulator * currentNumber, 1);
+    return this.list.reduce((accumulator, currentNumber) => (
+      accumulator * currentNumber
+    ), 1);
   }
 
   min() {
