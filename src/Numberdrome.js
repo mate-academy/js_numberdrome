@@ -15,7 +15,9 @@ class Numberdrome {
 
   sum() {
     return this.list.reduce(
-      (accumulator, currentNumber) => accumulator + currentNumber, 0);
+      (accumulator, currentNumber) => (
+        accumulator + currentNumber
+      ), 0);
   }
 
   product() {
