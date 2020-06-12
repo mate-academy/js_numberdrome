@@ -26,7 +26,7 @@ class Numberdrome {
   }
 
   max() {
-    return this.numbers.sort((a, b) => a - b)[this.numbers.length - 1];
+    return this.numbers.sort((a, b) => b - a)[0];
   }
 }
 
