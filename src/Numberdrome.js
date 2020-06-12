@@ -26,7 +26,7 @@ class Numberdrome {
   }
 
   max() {
-    return Math.max(...this.numbers);
+    return this.numbers.length ? Math.max(...this.numbers) : Error;
   }
 }
 
