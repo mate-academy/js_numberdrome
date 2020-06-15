@@ -26,7 +26,7 @@ class Numberdrome {
       throw new Error('array is empty');
     }
 
-    return Math.min.apply(null, this.numbers);
+    return Math.min(...this.numbers);
   }
 
   max() {
@@ -34,7 +34,7 @@ class Numberdrome {
       throw new Error('array is empty');
     }
 
-    return Math.max.apply(null, this.numbers);
+    return Math.max(...this.numbers);
   }
 }
 
