@@ -22,11 +22,11 @@ class Numberdrome {
   }
 
   min() {
-    return this.numbers.sort((a, b) => a - b)[0];
+    return Math.min(...this.numbers);
   }
 
   max() {
-    return this.numbers.sort((a, b) => b - a)[0];
+    return Math.max(...this.numbers);
   }
 }
 
