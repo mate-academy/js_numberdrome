@@ -14,19 +14,11 @@ class Numberdrome {
   }
 
   sum() {
-    if (!this.list.length) {
-      return 0;
-    } else {
-      return this.list.reduce((sum, value) => sum + value, 0);
-    }
+    return this.list.reduce((sum, value) => sum + value, 0);
   }
 
   product() {
-    if (!this.list.length) {
-      return 1;
-    } else {
-      return this.list.reduce((product, value) => product * value);
-    }
+    return this.list.reduce((product, value) => product * value, 1);
   }
 
   min() {
