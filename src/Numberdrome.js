@@ -22,7 +22,7 @@ class Numberdrome {
   }
 
   min() {
-    return Math.min(...this.numbers);
+    return this.numbers.length ? Math.min(...this.numbers) : Error;
   }
 
   max() {
