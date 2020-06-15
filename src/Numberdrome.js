@@ -17,7 +17,7 @@ class Numberdrome {
     if (!this.list.length) {
       return 0;
     } else {
-      return this.list.reduce((sum, value) => sum + value);
+      return this.list.reduce((sum, value) => sum + value, 0);
     }
   }
 
