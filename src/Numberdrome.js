@@ -40,7 +40,7 @@ class Numberdrome {
       throw new Error('there are no numbers');
     }
 
-    return [ ...this.numbers ].sort((a, b) => a - b)[0];
+    return Math.min(...this.numbers);
   }
 
   max() {
@@ -48,7 +48,7 @@ class Numberdrome {
       throw new Error('there are no numbers');
     }
 
-    return [ ...this.numbers ].sort((a, b) => b - a)[0];
+    return Math.max(...this.numbers);
   }
 }
 
