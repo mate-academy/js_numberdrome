@@ -14,11 +14,11 @@ class Numberdrome {
   }
 
   sum() {
-    return this.numbers.reduce((number, acumulator) => acumulator + number, 0);
+    return this.numbers.reduce((acumulator, number) => acumulator + number, 0);
   }
 
   product() {
-    return this.numbers.reduce((number, acumulator) => acumulator * number, 1);
+    return this.numbers.reduce((acumulator, number) => acumulator * number, 1);
   }
 
   min() {
