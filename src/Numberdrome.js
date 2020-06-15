@@ -22,11 +22,15 @@ class Numberdrome {
   };
 
   max() {
-    return Math.max(...this.numbers);
+    return this.numbers.length
+      ? Math.max(...this.numbers)
+      : new Error('There are not a numbers');
   }
 
   min() {
-    return Math.min(...this.numbers);
+    return this.numbers.length
+      ? Math.min(...this.numbers)
+      : new Error('There are not a numbers');
   }
 }
 
