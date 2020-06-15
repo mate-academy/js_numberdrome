@@ -8,25 +8,27 @@ class Numberdrome {
     this.numbers.push(n);
   }
   sum() {
-    return this.numbers.reduce((acc, x) => acc + x);
+    return this.numbers.reduce((accumulator, number) => accumulator + number);
   }
   product() {
-    return this.numbers.reduce((acc, x) => acc * x);
+    return this.numbers.reduce((accumulator, number) => accumulator * number);
   }
   min() {
-    return this.numbers.reduce((a, b) => Math.min(a, b));
+    if (this.numbers.length === 0) {
+      throw new Error('List empty');
+    } else {
+      return this.numbers.reduce((a, b) => Math.min(a, b));
+    }
   }
   max() {
-    return this.numbers.reduce((a, b) => Math.max(a, b));
+    if (this.numbers.length === 0) {
+      throw new Error('List empty');
+    } else {
+      return this.numbers.reduce((a, b) => Math.max(a, b));
+    }
   }
   removeNumber(n) {
-    for (let i = 0; i < this.numbers.length; i++) {
-      if (this.numbers[i] === n) {
-        delete this.numbers[i];
-      }
-    }
-
-    return this.numbers;
+    this.numbers = this.numbers.filter(number => number !== n);
   }
 }
 
