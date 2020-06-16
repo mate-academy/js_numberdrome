@@ -14,18 +14,14 @@ class Numberdrome {
     return this.numbers.reduce((accumulator, number) => accumulator * number);
   }
   min() {
-    if (this.numbers.length === 0) {
-      throw new Error('List empty');
-    } else {
-      return this.numbers.reduce((a, b) => Math.min(a, b));
-    }
+    return this.numbers.length === 0
+      ? new Error('List empty')
+      : Math.min(...this.numbers);
   }
   max() {
-    if (this.numbers.length === 0) {
-      throw new Error('List empty');
-    } else {
-      return this.numbers.reduce((a, b) => Math.max(a, b));
-    }
+    return this.numbers.length === 0
+      ? new Error('List empty')
+      : Math.max(...this.numbers);
   }
   removeNumber(n) {
     this.numbers = this.numbers.filter(number => number !== n);
